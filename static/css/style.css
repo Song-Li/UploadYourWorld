@@ -5,12 +5,42 @@ body {
   padding: 0;
 }
 
+html {
+  overflow: hidden;
+}
+
 body {
+  overflow: scroll;
   font-family: "Roboto", sans-serif;
   background: linear-gradient(to top, #4F6072, #8699AA);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  /* background-image: url("../imgs/bg.jpg"); */
+}
+
+.container {
+  min-height: 600px;
+  height: 100%;
+  width: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.container2 {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-size: 40px;
+  font-weight: 100;
+  color: white;
+  margin: 0px;
 }
 
 .upload {
@@ -20,13 +50,14 @@ body {
   min-height: 445px;
   box-sizing: border-box;
   border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   padding-bottom: 20px;
-  background: #fff;
+  background: rgba(255, 255, 255, 1);
   -webkit-animation: fadeup 0.5s 0.5s ease both;
           animation: fadeup 0.5s 0.5s ease both;
   transform: translateY(20px);
   opacity: 0;
+  backdrop-filter: blur(6px);
 }
 .upload-green{
   background: #4db6ac;
@@ -64,7 +95,7 @@ body {
 .upload .upload-files header p .load {
   display: inline-block;
   font-weight: 100;
-  margin-left: -8px;
+  margin-left: -3px;
   transform: translateX(-20px);
   opacity: 0;
   -webkit-animation: faderight 1s 1.5s ease both;
@@ -74,6 +105,8 @@ body {
   text-align: center;
   padding: 50px 0;
   padding-bottom: 30px;
+  box-sizing: border-box;
+  border: solid 2px rgba(0, 0, 0, 0); /* workaround when size is not fixed */
 }
 .upload .upload-files .body.hidden {
   display: none;

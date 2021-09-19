@@ -10,55 +10,60 @@
   </head>
   <body>
     <!-- partial:index.partial.html -->
-      <div class="upload">
-        <div class="upload-files">
-          <header class="upload-blue">
-            <p>
-            <i class="fa fa-cloud-upload" aria-hidden="true"></i>
-            <span class="up">To</span>
-            <span class="load">Image</span>
-            </p>
-          </header>
-          <div class="body" id="dropFile">
-            <i class="fa fa-file-text-o pointer-none" aria-hidden="true"></i>
-            <p class="pointer-none"><b>Drag and drop</b> files here <br /> or <a href="" id="triggerUploadFile">browse</a> to begin the upload</p>
-            <form id="uploadfile" target="dummyframe">
-              <input type="file" id="inputFile" name="file" multiple="multiple"/>
-            </form>
-          </div>
-          <footer id='fileFooter'>
-            <div class="list-files" id="listFiles">
-              <!--   template   -->
+    <div class="container">
+      <div class="title"><h1>Upload Your World</h1></div>
+      <div class="container2">
+        <div class="upload">
+          <div class="upload-files">
+            <header class="upload-blue">
+              <p>
+              <i class="fa fa-cloud-upload" aria-hidden="true"></i>
+              <span class="up">To</span>
+              <span class="load">Image</span>
+              </p>
+            </header>
+            <div class="body" id="dropFile">
+              <i class="fa fa-file-text-o pointer-none" aria-hidden="true"></i>
+              <p class="pointer-none"><b>Drag and drop</b> files here <br /> or <a href="" id="triggerUploadFile">browse</a> to begin the upload</p>
+              <form id="uploadfile" target="dummyframe">
+                <input type="file" id="inputFile" name="file" multiple="multiple"/>
+              </form>
             </div>
-            <button class="importar" id="downloadImgs"><a href='/converted'>Images Zip</a></button>
-          </footer>
+            <footer id='fileFooter'>
+              <div class="list-files" id="listFiles">
+                <!--   template   -->
+              </div>
+              <button class="importar" id="downloadImgs"><a href='/converted'>Images Zip</a></button>
+            </footer>
+          </div>
         </div>
-      </div>
 
-      <div class="upload">
-        <div class="upload-files">
-          <header class="upload-green">
-            <p>
-            <i class="fa fa-cloud-upload" aria-hidden="true"></i>
-            <span class="up">To</span>
-            <span class="load">File</span>
-            </p>
-          </header>
-          <div class="body" id="dropImg">
-            <i class="fa fa-file-text-o pointer-none" aria-hidden="true"></i>
-            <p class="pointer-none"><b>Drag and drop</b> files here <br /> or <a href="" id="triggerUploadImgs">browse</a> to begin the upload</p>
-            <form id="uploadimg" enctype="multipart/form-data" target="dummyframe">
-              <input type="file" id="inputImg" multiple="multiple" name="file"/>
-            </form>
-          </div>
-          <footer id='imgFooter'>
-            <div class="list-files" id="listImgs">
-              <!--   template   -->
+        <div class="upload">
+          <div class="upload-files">
+            <header class="upload-green">
+              <p>
+              <i class="fa fa-cloud-upload" aria-hidden="true"></i>
+              <span class="up">To</span>
+              <span class="load">File</span>
+              </p>
+            </header>
+            <div class="body" id="dropImg">
+              <i class="fa fa-file-text-o pointer-none" aria-hidden="true"></i>
+              <p class="pointer-none"><b>Drag and drop</b> files here <br /> or <a href="" id="triggerUploadImgs">browse</a> to begin the upload</p>
+              <form id="uploadimg" enctype="multipart/form-data" target="dummyframe">
+                <input type="file" id="inputImg" multiple="multiple" name="file"/>
+              </form>
             </div>
-            <button class="importar" id="downloadFile"><a href='/backed'>Download File</a></button>
-          </footer>
+            <footer id='imgFooter'>
+              <div class="list-files" id="listImgs">
+                <!--   template   -->
+              </div>
+              <button class="importar" id="downloadFile"><a href='/backed'>Download File</a></button>
+            </footer>
+          </div>
         </div>
       </div>
+    </div>
     <!-- partial -->
     <script  src="./css/script.js"></script>
 
