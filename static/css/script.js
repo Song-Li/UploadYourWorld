@@ -63,34 +63,58 @@ App.init = function () {
   });
 
   // drop events
+  var counter1 = 0;
   doc("#dropImg").ondragleave = evt => {
-    doc("#dropImg").classList.remove("active");
+    evt.stopPropagation();
+    counter1--;
+    if (counter1 == 0){
+      doc("#dropImg").classList.remove("active");
+    }
     evt.preventDefault();
   };
-  doc("#dropImg").ondragover = $("#dropImg").ondragenter = evt => {
+  doc("#dropImg").ondragenter = evt => {
+    evt.stopPropagation();
+    counter1++;
     doc("#dropImg").classList.add("active");
     evt.preventDefault();
   };
+  doc("#dropImg").ondragover = evt => {
+    evt.preventDefault();
+  }
   doc("#dropImg").ondrop = evt => {
+    evt.stopPropagation();
     doc("input[id='inputImg']").files = evt.dataTransfer.files;
     doc("#imgFooter").classList.add("hasFiles");
     doc("#dropImg").classList.remove("active");
+    counter1 = 0;
     evt.preventDefault();
     figures_to_file();
   };
 
+  var counter2 = 0;
   doc("#dropFile").ondragleave = evt => {
-    doc("#dropFile").classList.remove("active");
+    evt.stopPropagation();
+    counter2--;
+    if (counter2 == 0){
+      doc("#dropFile").classList.remove("active");
+    }
     evt.preventDefault();
   };
-  doc("#dropFile").ondragover = $("#dropFile").ondragenter = evt => {
+  doc("#dropFile").ondragover = evt => {
+    evt.preventDefault();
+  }
+  doc("#dropFile").ondragenter = evt => {
+    evt.stopPropagation();
+    counter2++;
     doc("#dropFile").classList.add("active");
     evt.preventDefault();
   };
   doc("#dropFile").ondrop = evt => {
+    evt.stopPropagation();
     doc("input[id='inputFile']").files = evt.dataTransfer.files;
     doc("#fileFooter").classList.add("hasFiles");
     doc("#dropFile").classList.remove("active");
+    counter2 = 0;
     evt.preventDefault();
     file_to_figures()
   };
