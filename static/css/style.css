@@ -19,7 +19,7 @@ body {
 }
 
 .container {
-  min-height: 600px;
+  min-height: 700px;
   height: 100%;
   width: 100%;
   display: flex;
@@ -41,6 +41,10 @@ h1 {
   font-weight: 100;
   color: white;
   margin: 0px;
+}
+
+#logo {
+  height: 150px;
 }
 
 .upload {
