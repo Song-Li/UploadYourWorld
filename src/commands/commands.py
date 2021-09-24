@@ -31,10 +31,16 @@ def lookup(hosts: typing.List[str], bad_name: int) -> int:
 @command
 def ls():
     """
-    list the files in the curr dir
+    list the files in the current dir
     """
     ctx = context.get_context()
     upload_your_world.list_dir()
 
-    print(ctx)
+@command
+@argument("target_path", description="The target relative path", positional=True)
+def cd(target_path):
+    """
+    change the directory to another dir
+    """
+    upload_your_world.change_directory(target_path)
 
