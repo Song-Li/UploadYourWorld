@@ -1,0 +1,15 @@
+{
+  "type": "dir",
+  "sub":{
+    "test.js": {
+      "type": "file"
+    }, "123.png": {
+    "type": "file"
+    }, "inner": 
+    {"type": "dir", 
+      "sub": {
+        "inner123.txt": {"type": "file"}
+      }
+    }
+  }
+}
