@@ -115,11 +115,11 @@ def get_back():
 @app.route('/css/<path:cssname>', methods=['GET'])
 @app.route('/imgs/<path:imgname>', methods=['GET'])
 def index(cssname=None, imgname=None):
-    if not cssname:
+    if not (cssname or imgname):
         return flask.send_from_directory(app.static_folder, 'index.html')
     elif cssname:
         return flask.send_from_directory(os.path.join(app.static_folder, 'css'), cssname)
     elif imgname:
-        return flask.send_from_directory(os.path.join(app.static_folder, 'imgs'), cssname)
+        return flask.send_from_directory(os.path.join(app.static_folder, 'imgs'), imgname)
 
 app.run(host='0.0.0.0', port=9870)
